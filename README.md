@@ -13,3 +13,6 @@ TipApp is an app that allows users to calculate tips from their bills.
 #### BONUS
 - [ ] Settings Screen
 - [ ] Run your app on real device
+
+#### App Walkthrough GIF
+<img src="file:///Users/milktea/Documents/TipAppDemo.gif" width=250><br>
