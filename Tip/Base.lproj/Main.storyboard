@@ -1,24 +1,170 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QxK-Ko-kz4">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tip Calculator-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07a-Dk-DE8">
+                                <rect key="frame" x="25" y="129" width="70" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Y5M-yl-BGF"/>
+                                    <constraint firstAttribute="width" constant="70" id="bqV-cb-1In"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$$$" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5xe-N5-ptU">
+                                <rect key="frame" x="200" y="129" width="150" height="35"/>
+                                <color key="backgroundColor" red="0.53842144550000004" green="0.71379035790000001" blue="0.93547368050000002" alpha="0.80107555649999995" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="2bk-Uf-BP3"/>
+                                    <constraint firstAttribute="height" constant="35" id="8zH-q2-cG3"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="editingChanged" id="0WO-xG-owg"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHS-sd-224">
+                                <rect key="frame" x="25" y="209" width="70" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="FRn-XZ-hzo"/>
+                                    <constraint firstAttribute="width" constant="70" id="qQb-pr-A3i"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VId-06-1ke">
+                                <rect key="frame" x="200" y="209" width="150" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="lJv-kz-qdY"/>
+                                    <constraint firstAttribute="height" constant="35" id="veD-4T-YHA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pau-hJ-7lQ">
+                                <rect key="frame" x="25" y="414" width="70" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Of4-EN-Rav"/>
+                                    <constraint firstAttribute="height" constant="35" id="cwL-mW-lpg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B24-6t-FM6">
+                                <rect key="frame" x="200" y="414" width="150" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Pe8-XN-053"/>
+                                    <constraint firstAttribute="height" constant="35" id="V8D-5v-uxY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mjb-aG-5QJ">
+                                <rect key="frame" x="25" y="341" width="325" height="29"/>
+                                <segments>
+                                    <segment title="10%"/>
+                                    <segment title="15%"/>
+                                    <segment title="20%"/>
+                                </segments>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <connections>
+                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="u3D-nb-pQd"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7AE-Lm-80o">
+                                <rect key="frame" x="25" y="289" width="325" height="7"/>
+                                <color key="backgroundColor" red="0.5" green="0.031397599169999998" blue="0.043046628410000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="325" id="UVc-p1-F0Z"/>
+                                    <constraint firstAttribute="height" constant="7" id="gtx-Z0-toQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.5384214455184303" green="0.71379035787542688" blue="0.93547368049621582" alpha="0.80107555650684936" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="mjb-aG-5QJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="7hs-xE-2g5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mjb-aG-5QJ" secondAttribute="trailing" constant="25" id="7tx-KO-cQA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5xe-N5-ptU" secondAttribute="trailing" constant="25" id="8Cr-Nj-dQz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B24-6t-FM6" secondAttribute="trailing" constant="25" id="Beg-LO-yrd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7AE-Lm-80o" secondAttribute="trailing" constant="25" id="FVA-ft-tM6"/>
+                            <constraint firstItem="mjb-aG-5QJ" firstAttribute="top" secondItem="7AE-Lm-80o" secondAttribute="bottom" constant="45" id="TOQ-mi-sdQ"/>
+                            <constraint firstItem="AHS-sd-224" firstAttribute="top" secondItem="07a-Dk-DE8" secondAttribute="bottom" constant="45" id="Tv8-iI-8ai"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VId-06-1ke" secondAttribute="trailing" constant="25" id="Zak-6e-vuF"/>
+                            <constraint firstItem="5xe-N5-ptU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="65" id="axx-49-xQV"/>
+                            <constraint firstItem="VId-06-1ke" firstAttribute="top" secondItem="5xe-N5-ptU" secondAttribute="bottom" constant="45" id="cco-CX-PoA"/>
+                            <constraint firstItem="7AE-Lm-80o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="iJ5-fQ-1iH"/>
+                            <constraint firstItem="07a-Dk-DE8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="qFv-dk-nD3"/>
+                            <constraint firstItem="B24-6t-FM6" firstAttribute="top" secondItem="mjb-aG-5QJ" secondAttribute="bottom" constant="45" id="sLd-9h-IPi"/>
+                            <constraint firstItem="Pau-hJ-7lQ" firstAttribute="top" secondItem="mjb-aG-5QJ" secondAttribute="bottom" constant="45" id="tVM-DK-nAq"/>
+                            <constraint firstItem="7AE-Lm-80o" firstAttribute="top" secondItem="AHS-sd-224" secondAttribute="bottom" constant="45" id="u6r-qu-avq"/>
+                            <constraint firstItem="07a-Dk-DE8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="65" id="uGQ-9Y-EPa"/>
+                            <constraint firstItem="Pau-hJ-7lQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="wO8-qp-jzt"/>
+                            <constraint firstItem="AHS-sd-224" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="wW2-2B-17X"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="dcP-th-iVt" appends="YES" id="KZD-Hl-y47"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" title="Tip Calculator" id="Se8-wk-8ke"/>
+                    <connections>
+                        <outlet property="billField" destination="5xe-N5-ptU" id="SW8-7x-MDS"/>
+                        <outlet property="tipControl" destination="mjb-aG-5QJ" id="Ne5-8P-tOT"/>
+                        <outlet property="tipLabel" destination="VId-06-1ke" id="6Gs-Ob-3m3"/>
+                        <outlet property="totalLabel" destination="B24-6t-FM6" id="ZVl-jd-AOT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dcP-th-iVt">
+                    <connections>
+                        <action selector="onTap:" destination="BYZ-38-t0r" id="NHL-UX-WMZ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Vlc-nZ-Ybb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QxK-Ko-kz4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fCE-Ec-hTh">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="aYl-hi-CUD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d4C-xb-juY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
